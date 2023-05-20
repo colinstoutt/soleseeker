@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import WorkSharpIcon from "@mui/icons-material/WorkSharp";
 import SearchIcon from "@mui/icons-material/Search";
 
+import { CartContext } from "../cartContext";
+
 export const Navbar = () => {
   const [toggleProducts, setToggleProducts] = useState(false);
+
+  const cart = useContext(CartContext);
+  const productsCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
 
   return (
     <div className="fixed top-0 w-full z-50">
@@ -38,7 +46,7 @@ export const Navbar = () => {
 
           <div className="flex gap-3">
             <a
-              href="#"
+              href="/"
               className=" button-effect-1 md:block hidden text-md  uppercase font-light"
             >
               Home
@@ -54,7 +62,9 @@ export const Navbar = () => {
           <div className="flex gap-3 items-center ">
             <div className="group relative">
               <div className="absolute top-[1.24rem] left-1/2 -translate-x-1/2 -translate-y-1/2 text-black cursor-pointer z-10 text-sm">
-                <span className="group-hover:text-white z-10">1</span>
+                <span className="group-hover:text-white z-10">
+                  {productsCount === 0 ? "" : productsCount}
+                </span>
               </div>
               <div className=" cursor-pointer group-hover:bg-black absolute top-[0.745rem] right-[0.39rem] h-[1rem] w-[1.4rem] bg-white"></div>
               <WorkSharpIcon
