@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <main className="mt-24">
-      <section className="container m-auto mb-10">
+      <section className="sm:container m-auto mb-10">
         <h1 className="pt-4 text-2xl font-thin sm:p-0 sm:p-4 px-4 pb-4">
           Featured Products
         </h1>
