@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getShoeData } from "../data/shoes";
 import { SmallCarousel } from "../components/SmallCarousel";
@@ -9,7 +9,12 @@ export default function Shoe() {
   const { id } = useParams();
   const shoe = getShoeData(id);
   const cart = useContext(CartContext);
-  console.log(cart.items);
+
+  const [size, setSize] = useState("");
+  const handleSizeChange = (e) => {
+    setSize(e.target.value);
+  };
+  const [sizeWarning, setSizeWarning] = useState(false);
 
   return (
     <div className="mt-20">
@@ -27,6 +32,8 @@ export default function Shoe() {
             <select
               name="Size"
               className="mb-4 text-xl w-24 border border-gray-300 p-1"
+              value={size}
+              onChange={handleSizeChange}
             >
               <option value="size">Size</option>
               <option value="6">6</option>
@@ -48,14 +55,23 @@ export default function Shoe() {
               <option value="6">15</option>
             </select>
             <br />
-
             <button
-              onClick={() => cart.addOneToCart(shoe.id)}
-              className="border border-gray-300 hover:border-black px-6 py-2 mb-10"
+              onClick={() => {
+                if (size != "size") {
+                  cart.addOneToCart(shoe.id);
+                  setSizeWarning(false);
+                } else {
+                  setSizeWarning(true);
+                }
+              }}
+              className="border border-gray-300 hover:border-black px-6 py-2"
+              style={!sizeWarning ? { marginBottom: "2.1rem" } : null}
             >
               Add to Bag
             </button>
-
+            {sizeWarning ? (
+              <h1 className="mb-4 text-red-500 text-sm">Please pick a size.</h1>
+            ) : null}
             <p className="mb-20">{shoe.desc}</p>
           </div>
         </>
