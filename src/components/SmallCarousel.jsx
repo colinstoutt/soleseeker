@@ -40,7 +40,7 @@ export const SmallCarousel = ({ images, shoe }) => {
           <div className="flex items-center justify-center gap-3 mb-10">
             {images.map((image, index) => (
               <img
-                className="cursor-pointer h-auto w-[70px]"
+                className="cursor-pointer h-auto w-[65px]"
                 onClick={() => setCarouselIndex(index)}
                 src={image}
                 alt={shoe.name}
