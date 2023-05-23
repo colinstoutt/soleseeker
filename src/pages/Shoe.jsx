@@ -19,6 +19,13 @@ export default function Shoe() {
 
   return (
     <div className="mt-20 lg:mt-40">
+      {toggleModal ? (
+        <CartModal toggleModal={toggleModal} setToggleModal={setToggleModal} />
+      ) : null}
+      {toggleModal ? (
+        <div className="z-30 bg-black opacity-20 fixed top-0 right-0 w-full h-full"></div>
+      ) : null}
+
       {shoe ? (
         <>
           <div className="flex lg:flex-row flex-col justify-center">
@@ -74,9 +81,6 @@ export default function Shoe() {
             </div>
           </div>
         </>
-      ) : null}
-      {toggleModal ? (
-        <CartModal toggleModal={toggleModal} setToggleModal={setToggleModal} />
       ) : null}
     </div>
   );

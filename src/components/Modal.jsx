@@ -12,7 +12,7 @@ export const CartModal = ({ setToggleModal }) => {
   console.log(cart.items);
 
   return (
-    <div className="fixed lg:pt-32 lg:right-0 bottom-0 lg:h-full h-1/2 bg-white lg:w-1/4 w-full shadow-2xl p-6">
+    <div className="z-40 fixed lg:pt-32 lg:right-0 bottom-0 lg:h-full h-1/2 bg-white lg:w-1/4 w-full shadow-2xl p-6">
       <div className="flex items-center gap-2">
         <svg
           className="h-7 w-7"
