@@ -62,10 +62,16 @@ export const Footer = () => {
           © 2023 SOLESEEKER. ALL RIGHTS RESERVED.
         </h6>
         <div className="flex gap-16 text-sm justify-center mb-8 ">
-          <a href="#" className="text-gray-500 button-effect-1">
+          <a
+            href="#"
+            className="text-gray-500 transition-all duration-150 hover:bg-black hover:text-white"
+          >
             CORPORATE
           </a>
-          <a href="#" className="text-gray-500 button-effect-1">
+          <a
+            href="#"
+            className="text-gray-500 transition-all duration-150 hover:bg-black hover:text-white"
+          >
             PRIVACY
           </a>
         </div>

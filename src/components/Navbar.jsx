@@ -26,34 +26,56 @@ export const Navbar = () => {
         </a>
         <div className="flex justify-between items-center uppercase">
           {toggleProducts ? null : (
-            <MenuIcon
-              sx={{ fontSize: "1.9rem" }}
-              className="md:hidden cursor-pointer"
+            <svg
+              className="md:hidden w-7 h-7 cursor-pointer"
               onClick={() => {
                 setToggleProducts(!toggleProducts);
               }}
-            />
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              ></path>
+            </svg>
           )}
           {!toggleProducts ? null : (
-            <CloseIcon
-              sx={{ fontSize: "1.9rem" }}
-              className="md:hidden cursor-pointer"
+            <svg
+              className="md:hidden w-7 h-7 cursor-pointer"
               onClick={() => {
                 setToggleProducts(!toggleProducts);
               }}
-            />
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
           )}
 
           <div className="flex gap-3">
             <a
               href="/"
-              className=" button-effect-1 md:block hidden text-md  uppercase font-light"
+              className="transition-all duration-150 hover:bg-black hover:text-white md:block hidden text-md  uppercase font-light"
             >
               Home
             </a>
             <a
               href="#"
-              className="button-effect-1 md:block hidden text-md  font-light"
+              className="transition-all duration-150 hover:bg-black hover:text-white md:block hidden text-md  font-light"
               onClick={() => setToggleProducts(!toggleProducts)}
             >
               Products
@@ -66,10 +88,10 @@ export const Navbar = () => {
                   {productsCount === 0 ? "" : productsCount}
                 </span>
               </div>
-              <div className=" cursor-pointer group-hover:bg-black absolute top-[0.745rem] right-[0.39rem] h-[1rem] w-[1.4rem] bg-white"></div>
+              <div className="transition-all duration-100 cursor-pointer group-hover:bg-black absolute top-[0.745rem] right-[0.39rem] h-[1rem] w-[1.4rem] bg-white"></div>
               <WorkSharpIcon
                 sx={{ fontSize: "2.2rem" }}
-                className="cursor-pointer group-hover:text-black  transition-all duration-150 "
+                className="cursor-pointer group-hover:text-black"
               />
             </div>
           </div>
@@ -77,17 +99,29 @@ export const Navbar = () => {
       </nav>
       {toggleProducts ? (
         <div className="flex gap-3 bg-white px-4 py-2 font-light border-b border-black">
-          <a href="#" className="button-effect-1">
+          <a
+            href="#"
+            className="transition-all duration-150 hover:bg-black hover:text-white"
+          >
             All Products
           </a>
           <h1>|</h1>
-          <a href="#" className="button-effect-1">
+          <a
+            href="#"
+            className="transition-all duration-150 hover:bg-black hover:text-white"
+          >
             Nike
           </a>
-          <a href="#" className="button-effect-1">
+          <a
+            href="#"
+            className="transition-all duration-150 hover:bg-black hover:text-white"
+          >
             Jordan
           </a>
-          <a href="#" className="button-effect-1">
+          <a
+            href="#"
+            className="transition-all duration-150 hover:bg-black hover:text-white"
+          >
             Adidas
           </a>
         </div>
