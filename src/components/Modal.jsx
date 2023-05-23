@@ -43,7 +43,7 @@ export const CartModal = ({ setToggleModal }) => {
       </div>
       <div className="lg:block mb-3 flex justify-between items-center">
         <h1 className="lg:mb-0 ">Bag Subtotal:</h1>
-        <h4 className="lg:mb-6">${cart.getTotalCost()}</h4>
+        <h4 className="lg:mb-6">${cart.getTotalCost().toLocaleString()}</h4>
       </div>
       <button
         onClick={() => {

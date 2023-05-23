@@ -9,7 +9,7 @@ export const ModalItem = ({ shoe }) => {
       <div className="font-light">
         <h1 className="text-gray-500">{shoe.brand}</h1>
         <h1>{shoe.name}</h1>
-        <h1>${shoe.price}</h1>
+        <h1>${shoe.price.toLocaleString()}</h1>
       </div>
     </div>
   );
