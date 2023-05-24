@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import WorkSharpIcon from "@mui/icons-material/WorkSharp";
+import { useLocation } from "react-router";
 import SearchIcon from "@mui/icons-material/Search";
-
 import { CartContext } from "../cartContext";
 
-export const Navbar = () => {
+export const Navbar = ({ searchQuery, setSearchQuery }) => {
   const [toggleProducts, setToggleProducts] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
 
   const cart = useContext(CartContext);
   const productsCount = cart.items.reduce(
@@ -15,6 +14,22 @@ export const Navbar = () => {
     0
   );
 
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+  const handleSearch = () => {
+    setSearchQuery(searchInput);
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearch();
+    }
+  };
+
+  console.log(searchQuery);
+
+  const location = useLocation();
   return (
     <div className="fixed top-0 w-full z-50">
       <nav className="bg-white border-b border-black px-4 py-2 ">
@@ -84,21 +99,21 @@ export const Navbar = () => {
           <div className="flex gap-3 items-center ">
             <div className="group relative">
               <div className="absolute top-[1.24rem] left-1/2 -translate-x-1/2 -translate-y-1/2 text-black cursor-pointer z-10 text-sm">
-                <span className="group-hover:text-white z-10">
+                <span className="group-hover:text-white z-10 no-select">
                   {productsCount === 0 ? "" : productsCount}
                 </span>
               </div>
               <div className="transition-all duration-100 cursor-pointer group-hover:bg-black absolute top-[0.745rem] right-[0.39rem] h-[1rem] w-[1.4rem] bg-white"></div>
               <WorkSharpIcon
                 sx={{ fontSize: "2.2rem" }}
-                className="cursor-pointer group-hover:text-black"
+                className="cursor-pointer group-hover:text-black "
               />
             </div>
           </div>
         </div>
       </nav>
       {toggleProducts ? (
-        <div className="flex gap-3 bg-white px-4 py-2 font-light border-b border-black">
+        <div className="flex gap-3 bg-white px-4 py-2 font-light border-b border-black no-select">
           <a
             href="#"
             className="transition-all duration-150 hover:bg-black hover:text-white"
@@ -127,15 +142,24 @@ export const Navbar = () => {
         </div>
       ) : null}
 
-      <div className=" flex items-center h-6 border-b border-black py-6 px-4 bg-white">
-        <SearchIcon className="mr-4" />
-        <input
-          type="text"
-          placeholder="What are you looking for?"
-          size="auto"
-          className="font-light w-full outline-none uppercase text-sm bg-white"
-        ></input>
-      </div>
+      {location.pathname != "/" ? null : (
+        <div className=" flex items-center h-6 border-b border-black py-6 px-4 bg-white">
+          <SearchIcon
+            type="submit"
+            className="mr-4 text-gray-400 hover:text-black hover:cursor-pointer"
+            onClick={() => handleSearch()}
+          />
+          <input
+            type="text"
+            value={searchInput}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            placeholder="What are you looking for?"
+            size="auto"
+            className="font-light w-full outline-none uppercase text-sm bg-white"
+          ></input>
+        </div>
+      )}
     </div>
   );
 };

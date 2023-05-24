@@ -12,7 +12,7 @@ export const CartModal = ({ setToggleModal }) => {
   console.log(shoe);
 
   return (
-    <div className="rounded-tl-2xl  rounded-tr-2xl z-40 fixed lg:pt-32 lg:right-0 bottom-0 lg:h-full bg-white lg:w-1/4 w-full shadow-2xl px-6 pt-6">
+    <div className="rounded-tl-2xl  rounded-tr-2xl z-40 fixed lg:pt-20 lg:right-0 bottom-0 lg:h-full bg-white lg:w-1/4 w-full shadow-2xl px-6 pt-6">
       <div className="flex items-center gap-2">
         <svg
           className="h-7 w-7"
