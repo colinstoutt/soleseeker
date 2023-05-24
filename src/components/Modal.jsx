@@ -64,7 +64,9 @@ export const CartModal = ({ setToggleModal }) => {
         <h1 className="text-md font-semibold mb-4">You may also like:</h1>
 
         {shoesArray
-          .filter((product) => product.brand === shoe.brand)
+          .filter(
+            (product) => product.brand === shoe.brand && product.id != shoe.id
+          )
           .map((product) => (
             <a
               href={`/${product.id}`}
