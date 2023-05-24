@@ -34,6 +34,23 @@ const shoesArray = [
     isFeatured: true,
   },
   {
+    id: 10,
+    name: "Travis Scott x Wmns Air Jordan 1 Retro Low OG 'Olive'",
+    brand: "Jordan",
+    type: "Air Jordan 1",
+    desc: "The Travis Scott x Women’s Air Jordan 1 Retro Low OG ‘Olive’ presents the chart-topping rapper’s first sneaker collaboration in female sizing. The upper combines a black suede base with off-white leather overlays and olive suede Swooshes, featuring a reverse check on the lateral side and a traditional design on the opposite side. The neutral earth tones are punctuated by bold crimson accents, highlighted by woven Nike Air tongue tags and mismatched Jordan and Cactus Jack branding on each heel tab. Anchoring the low-top is a rubber cupsole that pairs vintage off-white sidewalls with an olive green rubber outsole.",
+    images: [
+      "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/872/318/original/1049526_01.jpg.jpeg?action=crop&width=1000",
+      "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/614/368/original/1049526_03.jpg.jpeg?action=crop&width=1000",
+      "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/614/362/original/1049526_04.jpg.jpeg?action=crop&width=1000",
+      "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/614/356/original/1049526_06.jpg.jpeg?action=crop&width=1000",
+      "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/614/360/original/1049526_08.jpg.jpeg?action=crop&width=1000",
+    ],
+    price: 2500,
+    isSoldOut: true,
+    isFeatured: true,
+  },
+  {
     id: 3,
     name: "Samba OG 'White Black Gum'",
     brand: "Adidas",

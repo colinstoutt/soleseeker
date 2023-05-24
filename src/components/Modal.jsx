@@ -9,10 +9,10 @@ export const CartModal = ({ setToggleModal }) => {
   const cart = useContext(CartContext);
   const { id } = useParams();
   const shoe = getShoeData(id);
-  console.log(cart.items);
+  console.log(shoe);
 
   return (
-    <div className="z-40 fixed lg:pt-32 lg:right-0 bottom-0 lg:h-full h-1/2 bg-white lg:w-1/4 w-full shadow-2xl p-6">
+    <div className="rounded-tl-2xl  rounded-tr-2xl z-40 fixed lg:pt-32 lg:right-0 bottom-0 lg:h-full bg-white lg:w-1/4 w-full shadow-2xl px-6 pt-6">
       <div className="flex items-center gap-2">
         <svg
           className="h-7 w-7"
@@ -29,7 +29,7 @@ export const CartModal = ({ setToggleModal }) => {
             d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           ></path>
         </svg>
-        <h1>Item added to cart</h1>
+        <h1>Item added to bag</h1>
         <CloseIcon
           sx={{ fontSize: "1.9rem" }}
           className="absolute right-3 md:hidden cursor-pointer"
@@ -53,13 +53,35 @@ export const CartModal = ({ setToggleModal }) => {
       >
         KEEP SHOPPING
       </button>
-      <button className="mb-6 mr-2 bg-black text-white border border-gray-300 px-8 py-3 text-sm">
+      <button className="mb-6 mr-2 bg-black text-white border border-gray-300 px-8 p-3 text-sm">
         {`VIEW BAG (${cart.items.reduce(
           (sum, item) => sum + item.quantity,
           0
         )})`}
       </button>
-      <h1 className="text-md font-semibold">You may also like:</h1>
+      <div className="bg-gray-300 h-[1px] w-full"></div>
+      <div className="lg:h-full h-60 py-4 overflow-y-auto">
+        <h1 className="text-md font-semibold mb-4">You may also like:</h1>
+
+        {shoesArray
+          .filter((product) => product.brand === shoe.brand)
+          .map((product) => (
+            <a
+              href={`/${product.id}`}
+              className="flex gap-4 items-center font-light overflow-y-scroll"
+            >
+              <img
+                className="mt-4 h-auto w-40 lg:w-1/3"
+                src={product.images[0]}
+                alt=""
+              />
+              <div>
+                <h1 className="lg:text-md md:text-sm mt-4">{product.name}</h1>
+                <h2 className="lg:text-md md:text-sm">${product.price}</h2>
+              </div>
+            </a>
+          ))}
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ export default function Shoe() {
   const [toggleModal, setToggleModal] = useState(false);
 
   return (
-    <div className="mt-20 lg:mt-40">
+    <div className="mt-20 lg:mt-40 overflow-hidden">
       {toggleModal ? (
         <CartModal toggleModal={toggleModal} setToggleModal={setToggleModal} />
       ) : null}
@@ -28,7 +28,7 @@ export default function Shoe() {
 
       {shoe ? (
         <>
-          <div className="flex lg:flex-row flex-col justify-center">
+          <div className="flex lg:flex-row flex-col justify-center overflow-hidden">
             <SmallCarousel images={shoe.images} shoe={shoe} />
             <div className="px-8 text-lg font-light lg:w-3/5">
               <div>
