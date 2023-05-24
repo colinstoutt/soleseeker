@@ -9,26 +9,29 @@ export const Footer = () => {
 
   return (
     <div className="w-full">
-      <div className="lg:h-[35rem] md:h-[35rem] h-[38rem] bg-black text-white text-center">
+      <div className="bg-black text-white text-center">
         <h4 className="tracking-widest pt-16 text-md font-semibold text-blue-500">
           JOIN THE SOLESEEKER NEWSLETTER
         </h4>
-        <h1 className="md:w-[45rem] m-auto  text-3xl font-semibold leading-normal p-4">
+        <h1 className="md:w-[45rem] m-auto  text-3xl font-semibold leading-normal px-4 pt-3">
           SIGN UP TO GET FIRST ACCESS AND UPDATES ABOUT PRODUCTS, EVENTS AND
           MORE.
         </h1>
         {!emailSubmitted ? (
-          <form onSubmit={() => setEmailSubmitted(true)}>
+          <form
+            onSubmit={() => setEmailSubmitted(true)}
+            className="flex justify-center m-10 pb-16"
+          >
             <input
               type="email"
               placeholder="ENTER EMAIL"
               size={30}
-              className="text-center outline-none text-black bg-white py-3 px-2 mt-4"
+              className="text-center outline-none text-black bg-white py-2 border-r border-gray-300 rounded-tl-md rounded-bl-md"
             />
             <br />
             <button
               type="submit"
-              className="py-2 px-20 mt-6 mb-16 bg-white text-black"
+              className="bg-white text-black px-4 rounded-tr-md rounded-br-md hover:bg-blue-500"
             >
               SUBMIT
             </button>
@@ -41,23 +44,22 @@ export const Footer = () => {
             news and updates.
           </p>
         ) : null}
-
-        <div className="w-80 m-auto border border-white flex gap-6 justify-center py-6 px-20">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <FacebookIcon className="bg-black text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <InstagramIcon className="bg-black text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <TwitterIcon className="bg-black text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <YouTubeIcon className="bg-black text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
-          </a>
-        </div>
       </div>
       <div>
+        <div className="m-auto flex gap-6 justify-center mt-10">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <FacebookIcon className=" text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <InstagramIcon className=" text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <TwitterIcon className="btext-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <YouTubeIcon className="text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
+          </a>
+        </div>
         <h6 className="text-gray-500 text-sm text-center my-5">
           © 2023 SOLESEEKER. ALL RIGHTS RESERVED.
         </h6>
