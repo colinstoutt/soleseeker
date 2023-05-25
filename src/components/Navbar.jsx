@@ -7,6 +7,7 @@ import { CartContext } from "../cartContext";
 export const Navbar = ({ searchQuery, setSearchQuery }) => {
   const [toggleProducts, setToggleProducts] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const location = useLocation();
 
   const cart = useContext(CartContext);
   const productsCount = cart.items.reduce(
@@ -29,7 +30,6 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
 
   console.log(searchQuery);
 
-  const location = useLocation();
   return (
     <div className="fixed top-0 w-full z-50">
       <nav className="bg-white border-b border-black px-4 py-2 ">
@@ -115,26 +115,26 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
       {toggleProducts ? (
         <div className="flex gap-3 bg-white px-4 py-2 font-light border-b border-black no-select">
           <a
-            href="#"
+            href="/all-products"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             All Products
           </a>
           <h1>|</h1>
           <a
-            href="#"
+            href="/nike"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             Nike
           </a>
           <a
-            href="#"
+            href="/jordan"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             Jordan
           </a>
           <a
-            href="#"
+            href="/adidas"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             Adidas
@@ -142,7 +142,7 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
         </div>
       ) : null}
 
-      {location.pathname != "/" ? null : (
+      {location.pathname === "/" || "/nike" || "/jordan" || "/adidas" ? (
         <div className=" flex items-center h-6 border-b border-black py-6 px-4 bg-white">
           <SearchIcon
             type="submit"
@@ -159,7 +159,7 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
             className="font-light w-full outline-none uppercase text-sm bg-white"
           ></input>
         </div>
-      )}
+      ) : null}
     </div>
   );
 };
