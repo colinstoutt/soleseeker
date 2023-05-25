@@ -32,7 +32,7 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
 
   return (
     <div className="fixed top-0 w-full z-50">
-      <nav className="bg-white border-b border-black px-4 py-2 ">
+      <nav className="bg-white border-b border-black px-4 py-3 ">
         <a
           href="/"
           className="text-2xl cursor-pointer font-black italic bg-black text-white pr-[0.1rem] absolute left-1/2 -translate-x-1/2"
@@ -142,7 +142,10 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
         </div>
       ) : null}
 
-      {location.pathname === "/" || "/nike" || "/jordan" || "/adidas" ? (
+      {location.pathname === "/" ||
+      location.pathname === "/nike" ||
+      location.pathname === "/jordan" ||
+      location.pathname === "/adidas" ? (
         <div className=" flex items-center h-6 border-b border-black py-6 px-4 bg-white">
           <SearchIcon
             type="submit"

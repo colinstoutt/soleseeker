@@ -18,7 +18,7 @@ export default function Shoe() {
   const [toggleModal, setToggleModal] = useState(false);
 
   return (
-    <div className="mt-10 lg:mt-28 overflow-hidden">
+    <div className="mt-12 lg:mt-28 overflow-hidden">
       {toggleModal ? (
         <CartModal toggleModal={toggleModal} setToggleModal={setToggleModal} />
       ) : null}
