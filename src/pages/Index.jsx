@@ -56,11 +56,11 @@ export default function Home({ searchQuery }) {
                 return (
                   <a href={`/${shoe.id}`} key={index} id={shoe.id} clas>
                     <div className="relative flex flex-col items-left p-4 justify-between h-72 border border-black">
-                      {shoe.isSoldOut ? (
-                        <div className="absolute text-red-500 font-bold text-center uppercase text-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                      {/* {shoe.isSoldOut ? (
+                        <div className="absolute text-red-500 font-bold text-center uppercase text-lg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                           Sold Out
                         </div>
-                      ) : null}
+                      ) : null} */}
                       <div className="flex gap-10 justify-between">
                         <h1 className="text-[0.9rem] font-light">
                           {shoe.name}
