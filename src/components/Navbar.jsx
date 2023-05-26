@@ -145,7 +145,8 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
       {location.pathname === "/" ||
       location.pathname === "/nike" ||
       location.pathname === "/jordan" ||
-      location.pathname === "/adidas" ? (
+      location.pathname === "/adidas" ||
+      location.pathname === "/all-products" ? (
         <div className=" flex items-center h-6 border-b border-black py-6 px-4 bg-white">
           <SearchIcon
             type="submit"

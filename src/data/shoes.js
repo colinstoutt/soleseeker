@@ -100,7 +100,7 @@ const shoesArray = [
     ],
     price: 300,
     isSoldOut: false,
-    isFeatured: true,
+    isFeatured: false,
   },
 ];
 

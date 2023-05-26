@@ -35,12 +35,21 @@ export default function Shoe() {
                 <h2 className="text-gray-500 ">{shoe.brand}</h2>
                 <h1 className="text-2xl -mt-1 mb-1">{shoe.name}</h1>
               </div>
-              <h2 className="mb-4 text-xl">${shoe.price}</h2>
+              <h2 className="mb-4 text-xl">
+                ${shoe.price}{" "}
+                {shoe.isSoldOut ? (
+                  <div className="text-red-500 text-lg font-bold uppercase mb-4">
+                    Sold Out
+                  </div>
+                ) : null}
+              </h2>
+
               <select
                 name="Size"
                 className="mb-4 text-xl w-24 border border-gray-300 p-1"
                 value={size}
                 onChange={handleSizeChange}
+                disabled={shoe.isSoldOut ? true : false}
               >
                 <option value="size">Size</option>
                 <option value="6">6</option>
@@ -63,6 +72,7 @@ export default function Shoe() {
               </select>
               <br />
               <button
+                disabled={shoe.isSoldOut ? true : false}
                 onClick={() => {
                   cart.addOneToCart(shoe.id);
                   setToggleModal(true);
