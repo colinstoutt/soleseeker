@@ -12,7 +12,7 @@ export const CartModal = ({ setToggleModal }) => {
   console.log(shoe);
 
   return (
-    <div className="rounded-tl-2xl  rounded-tr-2xl z-40 fixed lg:pt-20 lg:right-0 bottom-0 lg:h-full bg-white lg:w-1/4 w-full shadow-2xl px-6 pt-6">
+    <div className="rounded-tl-2xl  rounded-tr-2xl z-40 fixed lg:pt-20 lg:right-0 bottom-0 lg:h-full bg-white lg:w-1/4 w-full h-[38rem] shadow-2xl px-6 pt-6">
       <div className="flex items-center gap-2">
         <svg
           className="h-7 w-7"
@@ -49,16 +49,19 @@ export const CartModal = ({ setToggleModal }) => {
         onClick={() => {
           setToggleModal(false);
         }}
-        className="mr-2 border border-gray-300 px-8 py-3 text-sm lg:mb-2"
+        className="mb-4 mr-2 border border-gray-300 px-8 py-3 text-sm lg:mb-2"
       >
         KEEP SHOPPING
       </button>
-      <button className="mb-6 mr-2 bg-black text-white border border-gray-300 px-8 p-3 text-sm">
+      <a
+        href="/bag"
+        className="mr-2 bg-black text-white border border-gray-300 px-8 py-[14px] text-sm"
+      >
         {`VIEW BAG (${cart.items.reduce(
           (sum, item) => sum + item.quantity,
           0
         )})`}
-      </button>
+      </a>
       <div className="bg-gray-300 h-[1px] w-full"></div>
       <div className="lg:h-full h-60 py-4 overflow-y-auto">
         <h1 className="text-md font-semibold mb-4">You may also like:</h1>

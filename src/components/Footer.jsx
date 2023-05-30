@@ -47,16 +47,32 @@ export const Footer = () => {
       </div>
       <div>
         <div className="m-auto flex gap-6 justify-center mt-10">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FacebookIcon className=" text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <InstagramIcon className=" text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <TwitterIcon className="btext-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <YouTubeIcon className="text-5xl hover:scale-110 hover:text-blue-500 transition-all duration-100" />
           </a>
         </div>
@@ -65,13 +81,13 @@ export const Footer = () => {
         </h6>
         <div className="flex gap-16 text-sm justify-center mb-8 ">
           <a
-            href="#"
+            href="/"
             className="text-gray-500 transition-all duration-150 hover:bg-black hover:text-white"
           >
             CORPORATE
           </a>
           <a
-            href="#"
+            href="/"
             className="text-gray-500 transition-all duration-150 hover:bg-black hover:text-white"
           >
             PRIVACY

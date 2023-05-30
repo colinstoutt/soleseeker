@@ -28,8 +28,6 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
     }
   };
 
-  console.log(searchQuery);
-
   return (
     <div className="fixed top-0 w-full z-50">
       <nav className="bg-white border-b border-black px-4 py-3 ">
@@ -48,14 +46,14 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
               }}
               fill="none"
               stroke="currentColor"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               ></path>
             </svg>
@@ -68,14 +66,14 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
               }}
               fill="none"
               stroke="currentColor"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M6 18L18 6M6 6l12 12"
               ></path>
             </svg>
@@ -99,15 +97,20 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
           <div className="flex gap-3 items-center ">
             <div className="group relative">
               <div className="absolute top-[1.24rem] left-1/2 -translate-x-1/2 -translate-y-1/2 text-black cursor-pointer z-10 text-sm">
-                <span className="group-hover:text-white z-10 no-select">
+                <a
+                  href="/bag"
+                  className="group-hover:text-white z-10 no-select"
+                >
                   {productsCount === 0 ? "" : productsCount}
-                </span>
+                </a>
               </div>
-              <div className="transition-all duration-100 cursor-pointer group-hover:bg-black absolute top-[0.745rem] right-[0.39rem] h-[1rem] w-[1.4rem] bg-white"></div>
-              <WorkSharpIcon
-                sx={{ fontSize: "2.2rem" }}
-                className="cursor-pointer group-hover:text-black "
-              />
+              <a href="/bag">
+                <div className="transition-all duration-100 cursor-pointer group-hover:bg-black absolute top-[0.745rem] right-[0.39rem] h-[1rem] w-[1.4rem] bg-white"></div>
+                <WorkSharpIcon
+                  sx={{ fontSize: "2.2rem" }}
+                  className="cursor-pointer group-hover:text-black "
+                />
+              </a>
             </div>
           </div>
         </div>
