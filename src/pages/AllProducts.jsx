@@ -19,6 +19,7 @@ export default function AllProducts({ searchQuery }) {
                     shoeName.includes(search) || shoeBrand.includes(search)
                   );
                 })
+                .sort((a, b) => a.name.localeCompare(b.name))
                 .map((shoe, index) => {
                   return (
                     <a href={`/${shoe.id}`} key={index} id={shoe.id}>
@@ -48,31 +49,35 @@ export default function AllProducts({ searchQuery }) {
           All Products
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-3 xs:grid-cols-2 gap-4 sm:px-4 px-4">
-          {shoeData.map((shoe, index) => {
-            return (
-              <a href={`/${shoe.id}`} key={index} id={shoe.id}>
-                <div className="relative flex flex-col items-left p-4 justify-between h-72 border border-black">
-                  <div className="flex gap-10 justify-between">
-                    <h1 className="text-[0.9rem] font-light">
-                      {shoe.name}
-                      <br />
-                      {shoe.isSoldOut ? (
-                        <div className="text-red-500 font-bold uppercase mt-2">
-                          Sold Out
-                        </div>
-                      ) : null}
-                    </h1>
-                    <h1 className="text-[0.9rem] font-light">${shoe.price}</h1>
+          {shoeData
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((shoe, index) => {
+              return (
+                <a href={`/${shoe.id}`} key={index} id={shoe.id}>
+                  <div className="relative flex flex-col items-left p-4 justify-between h-72 border border-black">
+                    <div className="flex gap-10 justify-between">
+                      <h1 className="text-[0.9rem] font-light">
+                        {shoe.name}
+                        <br />
+                        {shoe.isSoldOut ? (
+                          <div className="text-red-500 font-bold uppercase mt-2">
+                            Sold Out
+                          </div>
+                        ) : null}
+                      </h1>
+                      <h1 className="text-[0.9rem] font-light">
+                        ${shoe.price}
+                      </h1>
+                    </div>
+                    <img
+                      className="h-auto w-[250px]"
+                      src={shoe.images[0]}
+                      alt={shoe.name}
+                    ></img>
                   </div>
-                  <img
-                    className="h-auto w-[250px]"
-                    src={shoe.images[0]}
-                    alt={shoe.name}
-                  ></img>
-                </div>
-              </a>
-            );
-          })}
+                </a>
+              );
+            })}
         </div>
       </section>
     </main>

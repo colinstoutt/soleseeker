@@ -56,6 +56,7 @@ export default function Home({ searchQuery }) {
                 .filter((shoe) => {
                   return shoe.isFeatured === true;
                 })
+                .sort((a, b) => a.name.localeCompare(b.name))
                 .map((shoe, index) => {
                   return (
                     <a href={`/${shoe.id}`} key={index} id={shoe.id}>

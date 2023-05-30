@@ -16,9 +16,11 @@ export default function Nike({ searchQuery }) {
                   const shoeBrand = shoe.brand.toLowerCase();
                   const search = searchQuery.toLowerCase();
                   return (
-                    shoeName.includes(search) || shoeBrand.includes(search)
+                    shoeName.includes(search && shoeBrand === "jordan") ||
+                    shoeBrand.includes(search && shoeBrand === "jordan")
                   );
                 })
+                .sort((a, b) => a.name.localeCompare(b.name))
                 .map((shoe, index) => {
                   return (
                     <a href={`/${shoe.id}`} key={index} id={shoe.id}>
@@ -57,6 +59,7 @@ export default function Nike({ searchQuery }) {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 xs:grid-cols-2 gap-4 sm:px-4 px-4">
           {shoeData
+            .sort((a, b) => a.name.localeCompare(b.name))
             .filter((shoe) => {
               const shoeBrand = shoe.brand.toLowerCase();
 
