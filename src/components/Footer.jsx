@@ -26,12 +26,12 @@ export const Footer = () => {
               type="email"
               placeholder="ENTER EMAIL"
               size={30}
-              className="text-center outline-none text-black bg-white py-2 border-r border-gray-300 rounded-tl-md rounded-bl-md"
+              className="text-center outline-none text-black bg-white py-2 border-r border-gray-300 rounded-md"
             />
             <br />
             <button
               type="submit"
-              className="bg-white text-black px-4 rounded-tr-md rounded-br-md hover:bg-blue-500"
+              className="bg-white text-black px-4 rounded-md ml-2 hover:bg-blue-500"
             >
               SUBMIT
             </button>
