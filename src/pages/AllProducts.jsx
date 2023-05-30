@@ -8,7 +8,7 @@ export default function AllProducts({ searchQuery }) {
       <section className="sm:container m-auto mb-10">
         {searchQuery === "" ? null : (
           <>
-            <h1 className="pt-4 px-4 text-gray-500 mb-4 font-light">{`'${searchQuery}'`}</h1>
+            <h1 className="pt-6 px-4 text-gray-500 mb-4 font-light">{`'${searchQuery}'`}</h1>
             <div className="grid grid-cols-1 sm:grid-cols-3 xs:grid-cols-2 gap-4 sm:px-4 px-4">
               {shoeData
                 .filter((shoe) => {
