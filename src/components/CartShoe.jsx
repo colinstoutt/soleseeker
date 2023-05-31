@@ -8,19 +8,19 @@ export const CartShoe = ({ id, quantity }) => {
   const cart = useContext(CartContext);
 
   return (
-    <>
-      <div className="flex items-center gap-10 mb-10">
+    <div className="border border-black px-6 py-6 mb-4 sm:w-[50rem]">
+      <div className="flex items-center gap-10 mb-10 mt-6 ">
         <img
           src={shoeData.images[0]}
           alt={shoeData.name}
-          className="w-48 h-auto"
+          className="w-40 h-auto"
         />
         <div className="font-light">
           <h1 className="mb-1">{shoeData.name}</h1>
           <h1>${shoeData.price}</h1>
         </div>
       </div>
-      <div className="flex items-center justify-between border-t border-b border-gray-300 py-4 mb-16">
+      <div className="flex items-center justify-between border-t border-b border-gray-300 py-4 mb-10">
         <div className="flex relative">
           <button
             onClick={quantity > 1 ? () => cart.removeOneFromCart(id) : null}
@@ -38,13 +38,13 @@ export const CartShoe = ({ id, quantity }) => {
           </button>
           <button
             onClick={() => cart.deleteFromCart(id)}
-            className="absolute left-0 top-11 text-red-500 font-light text-sm cursor-pointer underline"
+            className="absolute left-0 top-12 text-red-500 font-light text-sm cursor-pointer underline"
           >
             Remove from bag
           </button>
         </div>
         <span className="font-light">${shoeData.price * quantity}</span>
       </div>
-    </>
+    </div>
   );
 };

@@ -31,7 +31,7 @@ const shoesArray = [
     ],
     price: 2500,
     isSoldOut: true,
-    isFeatured: true,
+    isFeatured: false,
   },
 
   {
@@ -100,7 +100,7 @@ const shoesArray = [
     ],
     price: 300,
     isSoldOut: false,
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: 7,
