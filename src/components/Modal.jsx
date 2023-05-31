@@ -49,7 +49,7 @@ export const CartModal = ({ setToggleModal }) => {
         onClick={() => {
           setToggleModal(false);
         }}
-        className="mb-4 mr-2 border border-gray-300 px-8 py-3 text-sm lg:mb-2"
+        className="mb-6 mr-2 border border-gray-300 px-8 py-3 text-sm lg:mb-2"
       >
         KEEP SHOPPING
       </button>
