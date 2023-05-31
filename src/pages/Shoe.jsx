@@ -11,10 +11,12 @@ export default function Shoe() {
   const cart = useContext(CartContext);
 
   const [size, setSize] = useState("");
+  console.log(size);
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
   const [sizeWarning, setSizeWarning] = useState(false);
+  console.log(sizeWarning);
   const [toggleModal, setToggleModal] = useState(false);
 
   return (
@@ -46,36 +48,44 @@ export default function Shoe() {
 
               <select
                 name="Size"
+                required
                 className="mb-4 text-xl w-24 border border-gray-300 p-1"
                 value={size}
                 onChange={handleSizeChange}
                 disabled={shoe.isSoldOut ? true : false}
               >
-                <option value="size">Size</option>
+                <option value="" disabled selected hidden>
+                  Size
+                </option>
                 <option value="6">6</option>
-                <option value="6">6.5</option>
-                <option value="6">7</option>
-                <option value="6">7.5</option>
-                <option value="6">8</option>
-                <option value="6">8.5</option>
-                <option value="6">9</option>
-                <option value="6">9.5</option>
-                <option value="6">10</option>
-                <option value="6">10.5</option>
-                <option value="6">11</option>
-                <option value="6">11.5</option>
-                <option value="6">12</option>
-                <option value="6">12.5</option>
-                <option value="6">13</option>
-                <option value="6">14</option>
-                <option value="6">15</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+                <option value="12.5">12.5</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
               </select>
               <br />
               <button
                 disabled={shoe.isSoldOut ? true : false}
                 onClick={() => {
-                  cart.addOneToCart(shoe.id);
-                  setToggleModal(true);
+                  if (size === "") {
+                    setSizeWarning(true);
+                  } else {
+                    cart.addOneToCart(shoe.id);
+                    setToggleModal(true);
+                    setSizeWarning(false);
+                  }
                 }}
                 className="border border-gray-300 hover:border-black px-6 py-2"
                 style={!sizeWarning ? { marginBottom: "2.1rem" } : null}
