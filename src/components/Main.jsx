@@ -7,6 +7,8 @@ import Nike from "../pages/Nike";
 import Jordan from "../pages/Jordan";
 import Adidas from "../pages/Adidas";
 import AllProducts from "../pages/AllProducts";
+import { Success } from "../pages/Success";
+import { Cancel } from "../pages/Cancel";
 
 export const Main = (props) => {
   return (
@@ -57,6 +59,8 @@ export const Main = (props) => {
             />
           }
         ></Route>
+        <Route path="/success" element={<Success />}></Route>
+        <Route path="/cancel" element={<Cancel />}></Route>
         <Route path="/:id" element={<Shoe />}></Route>
         <Route path="/bag" element={<Bag />}></Route>
       </Routes>

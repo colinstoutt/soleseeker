@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../cartContext";
-
 import { CartShoe } from "../components/CartShoe";
+import { Link } from "react-router-dom";
 
 export default function Bag() {
   const cart = useContext(CartContext);
@@ -9,6 +9,24 @@ export default function Bag() {
     (sum, product) => sum + product.quantity,
     0
   );
+
+  const checkout = async () => {
+    await fetch("http://localhost:3001/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items: cart.items }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        if (res.url) {
+          window.location.assign(res.url);
+        }
+      });
+  };
 
   return (
     <div className="sm:w-5/6 sm:m-auto">
@@ -23,12 +41,12 @@ export default function Bag() {
               <h1 className="font-light mb-2 sm:text-center">
                 Your bag is empty
               </h1>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="inline-block mb-52 text-white bg-black px-6 py-2 sm:text-center "
               >
                 Go Shopping
-              </a>
+              </Link>
             </>
           ) : (
             <div className="sm:flex gap-6">
@@ -51,7 +69,10 @@ export default function Bag() {
                   <span>Total: </span>${cart.getTotalCost().toFixed(2)}
                 </h1>
                 <div>
-                  <button className="text-white bg-black sm:w-auto w-full px-6 py-2 border border-gray-300">
+                  <button
+                    onClick={checkout}
+                    className="text-white bg-black sm:w-auto w-full px-6 py-2 border border-gray-300"
+                  >
                     Checkout
                   </button>
                 </div>

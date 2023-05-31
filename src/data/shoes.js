@@ -1,6 +1,6 @@
 const shoesArray = [
   {
-    id: 1,
+    id: "price_1NDxLxGmMREKNj3D4ZGLHfmz",
     name: "Zoom Kobe 6 'Grinch'",
     brand: "Nike",
     type: "Zoom Kobe 6",
@@ -17,7 +17,7 @@ const shoesArray = [
     isFeatured: false,
   },
   {
-    id: 2,
+    id: "price_1NDxN3GmMREKNj3DDPdCy22h",
     name: "Travis Scott x Wmns Air Jordan 1 Retro Low OG 'Olive'",
     brand: "Jordan",
     type: "Air Jordan 1",
@@ -35,7 +35,7 @@ const shoesArray = [
   },
 
   {
-    id: 3,
+    id: "price_1NDxNHGmMREKNj3DL0NiZYLy",
     name: "Samba OG 'White Black Gum'",
     brand: "Adidas",
     type: "Samba",
@@ -52,7 +52,7 @@ const shoesArray = [
     isFeatured: true,
   },
   {
-    id: 4,
+    id: "price_1NDxNTGmMREKNj3DEm2HAqcy",
     name: "Air Jordan 4 Retro 'Thunder' 2023",
     brand: "Jordan",
     type: "Air Jordan 4",
@@ -69,7 +69,7 @@ const shoesArray = [
     isFeatured: false,
   },
   {
-    id: 5,
+    id: "price_1NDxNfGmMREKNj3DRkYBofZA",
     name: "Air Jordan 1 Mid SE 'White Ice Blue'",
     brand: "Jordan",
     type: "Air Jordan",
@@ -86,7 +86,7 @@ const shoesArray = [
     isFeatured: true,
   },
   {
-    id: 6,
+    id: "price_1NDxNrGmMREKNj3DsiJSkQUI",
     name: "Yeezy Boost 350 V2 'Bred'",
     brand: "Adidas",
     type: "Yeezy Boost 350",
@@ -103,7 +103,7 @@ const shoesArray = [
     isFeatured: true,
   },
   {
-    id: 7,
+    id: "price_1NDxO2GmMREKNj3DcsdwPgxE",
     name: "Travis Scott x Air Max 1 'Baroque Brown'",
     brand: "Nike",
     type: "Air Max 1",
@@ -120,7 +120,7 @@ const shoesArray = [
     isFeatured: true,
   },
   {
-    id: 8,
+    id: "price_1NDxODGmMREKNj3DEf5rv34P",
     name: "Jarritos x Dunk Low SB",
     brand: "Nike",
     type: "Dunk SB",
@@ -137,7 +137,7 @@ const shoesArray = [
     isFeatured: true,
   },
   {
-    id: 9,
+    id: "price_1NDxOQGmMREKNj3DKOx1qolT",
     name: "Yeezy Boost 350 V2 'Zebra' 2017",
     brand: "Adidas",
     type: "Yeezy Boost 350",
@@ -156,10 +156,10 @@ const shoesArray = [
 ];
 
 function getShoeData(id) {
-  let shoeData = shoesArray.find((shoe) => shoe.id === parseInt(id));
+  let shoeData = shoesArray.find((shoe) => shoe.id === id);
 
   if (shoeData === undefined) {
-    console.log("Shoe data does not exist for ID: " + id);
+    console.log("Shoe data does not exist for id: " + id);
     return undefined;
   }
 

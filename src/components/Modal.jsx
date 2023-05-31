@@ -4,6 +4,7 @@ import { getShoeData, shoesArray } from "../data/shoes";
 import { CartContext } from "../cartContext";
 import CloseIcon from "@mui/icons-material/Close";
 import { ModalItem } from "./ModalItem";
+import { Link } from "react-router-dom";
 
 export const CartModal = ({ setToggleModal }) => {
   const cart = useContext(CartContext);
@@ -53,15 +54,15 @@ export const CartModal = ({ setToggleModal }) => {
       >
         KEEP SHOPPING
       </button>
-      <a
-        href="/bag"
+      <Link
+        to="/bag"
         className="mr-2 bg-black text-white border border-gray-300 px-8 py-[14px] text-sm"
       >
         {`VIEW BAG (${cart.items.reduce(
           (sum, item) => sum + item.quantity,
           0
         )})`}
-      </a>
+      </Link>
       <div className="bg-gray-300 h-[1px] w-full"></div>
       <div className="overflow-y-auto pt-6">
         <h1 className="text-md font-semibold mb-4">You may also like:</h1>

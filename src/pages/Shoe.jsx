@@ -4,6 +4,7 @@ import { shoesArray, getShoeData } from "../data/shoes";
 import { SmallCarousel } from "../components/SmallCarousel";
 import { CartModal } from "../components/Modal";
 import { CartContext } from "../cartContext";
+import { Link } from "react-router-dom";
 
 export default function Shoe() {
   const { id } = useParams();
@@ -108,11 +109,12 @@ export default function Shoe() {
         <div className="sm:flex gap-6 overflow-x-scroll">
           {shoesArray
             .filter(
-              (product) => product.brand === shoe.brand && product.id != shoe.id
+              (product) =>
+                product.brand === shoe.brand && product.id !== shoe.id
             )
             .map((product) => (
-              <a
-                href={`/${product.id}`}
+              <Link
+                to={`/${product.id}`}
                 className="flex gap-4 items-center font-light overflow-y-scroll"
               >
                 <img
@@ -124,7 +126,7 @@ export default function Shoe() {
                   <h1 className="lg:text-md md:text-sm mt-4">{product.name}</h1>
                   <h2 className="lg:text-md md:text-sm">${product.price}</h2>
                 </div>
-              </a>
+              </Link>
             ))}
         </div>
       </div>

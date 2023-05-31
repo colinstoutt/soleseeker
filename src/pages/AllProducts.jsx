@@ -1,4 +1,5 @@
 import { shoesArray } from "../data/shoes.js";
+import { Link } from "react-router-dom";
 
 export default function AllProducts({ searchQuery }) {
   const shoeData = shoesArray;
@@ -22,7 +23,7 @@ export default function AllProducts({ searchQuery }) {
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map((shoe, index) => {
                   return (
-                    <a href={`/${shoe.id}`} key={index} id={shoe.id}>
+                    <Link to={`/${shoe.id}`} key={index} id={shoe.id}>
                       <div className="flex flex-col items-left p-4 justify-between h-72 border border-black">
                         <div className="flex gap-10 justify-between">
                           <h1 className="text-[0.9rem] font-light">
@@ -38,7 +39,7 @@ export default function AllProducts({ searchQuery }) {
                           alt={shoe.name}
                         ></img>
                       </div>
-                    </a>
+                    </Link>
                   );
                 })}
             </div>
@@ -53,7 +54,7 @@ export default function AllProducts({ searchQuery }) {
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((shoe, index) => {
               return (
-                <a href={`/${shoe.id}`} key={index} id={shoe.id}>
+                <Link to={`/${shoe.id}`} key={index} id={shoe.id}>
                   <div className="relative flex flex-col items-left p-4 justify-between h-72 border border-black">
                     <div className="flex gap-10 justify-between">
                       <h1 className="text-[0.9rem] font-light">
@@ -75,7 +76,7 @@ export default function AllProducts({ searchQuery }) {
                       alt={shoe.name}
                     ></img>
                   </div>
-                </a>
+                </Link>
               );
             })}
         </div>

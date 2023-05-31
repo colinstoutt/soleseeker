@@ -3,6 +3,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -80,18 +81,18 @@ export const Footer = () => {
           © 2023 SOLESEEKER. ALL RIGHTS RESERVED.
         </h6>
         <div className="flex gap-16 text-sm justify-center mb-8 ">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-gray-500 transition-all duration-150 hover:bg-black hover:text-white"
           >
             CORPORATE
-          </a>
-          <a
-            href="/"
+          </Link>
+          <Link
+            to="/"
             className="text-gray-500 transition-all duration-150 hover:bg-black hover:text-white"
           >
             PRIVACY
-          </a>
+          </Link>
         </div>
       </div>
     </div>
