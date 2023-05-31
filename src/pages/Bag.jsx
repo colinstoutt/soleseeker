@@ -17,7 +17,7 @@ export default function Bag() {
           <h1 className="text-2xl font-light mt-16 py-6">My Bag</h1>
 
           {cart.items.length === 0 ? (
-            <h1 className="font-light">Bag is empty.</h1>
+            <h1 className="font-light mb-10">Bag is empty.</h1>
           ) : (
             <div className="sm:flex gap-6">
               {" "}
