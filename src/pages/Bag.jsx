@@ -14,10 +14,22 @@ export default function Bag() {
     <div className="sm:w-5/6 sm:m-auto">
       <div className="px-6 sm:mb-20 sm:flex justify-center">
         <div>
-          <h1 className="text-2xl font-light mt-16 py-6">My Bag</h1>
+          <h1 className="text-2xl font-light mt-16 py-6 sm:text-center">
+            My Bag
+          </h1>
 
           {cart.items.length === 0 ? (
-            <h1 className="font-light mb-10">Bag is empty.</h1>
+            <>
+              <h1 className="font-light mb-2 sm:text-center">
+                Your bag is empty
+              </h1>
+              <a
+                href="/"
+                className="inline-block mb-52 text-white bg-black px-6 py-2 sm:text-center "
+              >
+                Go Shopping
+              </a>
+            </>
           ) : (
             <div className="sm:flex gap-6">
               {" "}
