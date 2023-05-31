@@ -4,7 +4,7 @@ export default function AllProducts({ searchQuery }) {
   const shoeData = shoesArray;
 
   return (
-    <main className="mt-24">
+    <main className="mt-24 sm:mt-24">
       <section className="sm:container m-auto mb-10">
         {searchQuery === "" ? null : (
           <>

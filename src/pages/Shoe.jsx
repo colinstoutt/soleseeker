@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getShoeData } from "../data/shoes";
+import { shoesArray, getShoeData } from "../data/shoes";
 import { SmallCarousel } from "../components/SmallCarousel";
 import { CartModal } from "../components/Modal";
 import { CartContext } from "../cartContext";
@@ -87,11 +87,37 @@ export default function Shoe() {
                   Please pick a size.
                 </h1>
               ) : null}
-              <p className="mb-20">{shoe.desc}</p>
+              <p className="mb-10">{shoe.desc}</p>
             </div>
           </div>
         </>
       ) : null}
+      <div className="h-[0.5px] w-full bg-gray-300"></div>
+      <div className="sm:px-24 p-8 mb-6">
+        <h1 className="text-md font-light mb-4">More {shoe.brand} shoes:</h1>
+        <div className="sm:flex gap-6 overflow-x-scroll">
+          {shoesArray
+            .filter(
+              (product) => product.brand === shoe.brand && product.id != shoe.id
+            )
+            .map((product) => (
+              <a
+                href={`/${product.id}`}
+                className="flex gap-4 items-center font-light overflow-y-scroll"
+              >
+                <img
+                  className="mt-4 h-auto w-40"
+                  src={product.images[0]}
+                  alt=""
+                />
+                <div>
+                  <h1 className="lg:text-md md:text-sm mt-4">{product.name}</h1>
+                  <h2 className="lg:text-md md:text-sm">${product.price}</h2>
+                </div>
+              </a>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }
