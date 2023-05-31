@@ -63,7 +63,7 @@ export const CartModal = ({ setToggleModal }) => {
         )})`}
       </a>
       <div className="bg-gray-300 h-[1px] w-full"></div>
-      <div className="lg:h-full h-60 py-4 overflow-y-auto">
+      <div className="overflow-y-auto pt-6">
         <h1 className="text-md font-semibold mb-4">You may also like:</h1>
 
         {shoesArray
