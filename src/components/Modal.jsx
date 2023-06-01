@@ -50,7 +50,7 @@ export const CartModal = ({ setToggleModal }) => {
         onClick={() => {
           setToggleModal(false);
         }}
-        className="mb-6 mr-2 border border-gray-300 px-8 py-3 text-sm lg:mb-2"
+        className="sm:mb-0 mb-6 mr-2 border border-gray-300 px-8 py-3 text-sm lg:mb-2"
       >
         KEEP SHOPPING
       </button>
@@ -58,12 +58,14 @@ export const CartModal = ({ setToggleModal }) => {
         to="/bag"
         className="mr-2 bg-black text-white border border-gray-300 px-8 py-[14px] text-sm"
       >
-        {`VIEW BAG (${cart.items.reduce(
-          (sum, item) => sum + item.quantity,
-          0
-        )})`}
+        <button className="mt-2">
+          {`VIEW BAG (${cart.items.reduce(
+            (sum, item) => sum + item.quantity,
+            0
+          )})`}
+        </button>
       </Link>
-      <div className="bg-gray-300 h-[1px] w-full"></div>
+      <div className="bg-gray-300 h-[1px] w-full sm:mt-6"></div>
       <div className="overflow-y-auto pt-6">
         <h1 className="text-md font-semibold mb-4">You may also like:</h1>
 
