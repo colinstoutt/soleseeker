@@ -113,8 +113,8 @@ export default function Shoe() {
                 product.brand === shoe.brand && product.id !== shoe.id
             )
             .map((product) => (
-              <Link
-                to={`/${product.id}`}
+              <a
+                href={`/${product.id}`}
                 className="flex gap-4 items-center font-light overflow-y-scroll"
               >
                 <img
@@ -126,7 +126,7 @@ export default function Shoe() {
                   <h1 className="lg:text-md md:text-sm mt-4">{product.name}</h1>
                   <h2 className="lg:text-md md:text-sm">${product.price}</h2>
                 </div>
-              </Link>
+              </a>
             ))}
         </div>
       </div>
