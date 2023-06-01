@@ -8,7 +8,7 @@ export const CartShoe = ({ id, quantity }) => {
   const cart = useContext(CartContext);
 
   return (
-    <div className="border border-black px-6 py-6 mb-4 md:w-[30rem] lg:w-[40rem]">
+    <div className="border border-black px-6 py-2 mb-4 md:w-[30rem] lg:w-[40rem]">
       <div className="flex items-center gap-10 mb-10 mt-6 ">
         <img
           src={shoeData.images[0]}

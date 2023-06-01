@@ -11,7 +11,7 @@ export default function Bag() {
   );
 
   const checkout = async () => {
-    await fetch("https://soleseeker-backend.vercel.app/checkout", {
+    await fetch("http://localhost:3001/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,9 +32,7 @@ export default function Bag() {
     <div className="sm:w-5/6 sm:m-auto">
       <div className="px-6 sm:mb-20 sm:flex justify-center">
         <div>
-          <h1 className="text-2xl font-light mt-16 py-6 sm:text-center">
-            My Bag
-          </h1>
+          <h1 className="text-2xl font-light mt-16 py-6">My Bag</h1>
 
           {cart.items.length === 0 ? (
             <>

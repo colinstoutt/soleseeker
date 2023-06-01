@@ -45,7 +45,7 @@ export default function AllProducts({ searchQuery }) {
             </div>
           </>
         )}
-        <h1 className="pt-6 text-2xl font-thin sm:p-0 sm:p-4 px-4 pb-4">
+        <h1 className="sm:pt-7 pt-7 text-2xl font-thin sm:p-0 sm:p-4 px-4 pb-4">
           All Products
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-3 xs:grid-cols-2 gap-4 sm:px-4 px-4">
