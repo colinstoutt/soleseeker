@@ -16,48 +16,23 @@ export const Main = (props) => {
       <Routes>
         <Route
           path="/"
-          element={
-            <Index
-              searchQuery={props.searchQuery}
-              setSearchQuery={props.setSearchQuery}
-            />
-          }
+          element={<Index searchQuery={props.searchQuery} />}
         ></Route>
         <Route
           path="/nike"
-          element={
-            <Nike
-              searchQuery={props.searchQuery}
-              setSearchQuery={props.setSearchQuery}
-            />
-          }
+          element={<Nike searchQuery={props.searchQuery} />}
         ></Route>
         <Route
           path="/jordan"
-          element={
-            <Jordan
-              searchQuery={props.searchQuery}
-              setSearchQuery={props.setSearchQuery}
-            />
-          }
+          element={<Jordan searchQuery={props.searchQuery} />}
         ></Route>
         <Route
           path="/adidas"
-          element={
-            <Adidas
-              searchQuery={props.searchQuery}
-              setSearchQuery={props.setSearchQuery}
-            />
-          }
+          element={<Adidas searchQuery={props.searchQuery} />}
         ></Route>
         <Route
           path="/all-products"
-          element={
-            <AllProducts
-              searchQuery={props.searchQuery}
-              setSearchQuery={props.setSearchQuery}
-            />
-          }
+          element={<AllProducts searchQuery={props.searchQuery} />}
         ></Route>
         <Route path="/success" element={<Success />}></Route>
         <Route path="/cancel" element={<Cancel />}></Route>

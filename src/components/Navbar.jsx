@@ -117,35 +117,35 @@ export const Navbar = ({ searchQuery, setSearchQuery }) => {
       </nav>
       {toggleProducts ? (
         <div className="flex gap-3 bg-white px-4 py-2 font-light border-b border-black no-select">
-          <Link
+          <a
             onClick={() => setToggleProducts(false)}
-            to="/all-products"
+            href="/all-products"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             All Products
-          </Link>
+          </a>
           <h1>|</h1>
-          <Link
+          <a
             onClick={() => setToggleProducts(false)}
-            to="/nike"
+            href="/nike"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             Nike
-          </Link>
-          <Link
+          </a>
+          <a
             onClick={() => setToggleProducts(false)}
-            to="/jordan"
+            href="/jordan"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             Jordan
-          </Link>
-          <Link
+          </a>
+          <a
             onClick={() => setToggleProducts(false)}
-            to="/adidas"
+            href="/adidas"
             className="transition-all duration-150 hover:bg-black hover:text-white"
           >
             Adidas
-          </Link>
+          </a>
         </div>
       ) : null}
 

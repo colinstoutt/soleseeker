@@ -53,7 +53,7 @@ export default function Home({ searchQuery }) {
         ) : null}
 
         <div className="grid grid-cols-1 sm:grid-cols-3 xs:grid-cols-2 gap-4 sm:px-4 px-4">
-          {searchQuery === ""
+          {searchQuery === "" && shoeData.images !== null
             ? shoeData
                 .filter((shoe) => {
                   return shoe.isFeatured === true;
