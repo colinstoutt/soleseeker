@@ -35,17 +35,15 @@ export default function Bag() {
           <h1 className="text-2xl font-light mt-16 py-6">My Bag</h1>
 
           {cart.items.length === 0 ? (
-            <>
-              <h1 className="font-light mb-2 sm:text-center">
-                Your bag is empty
-              </h1>
+            <div className="w-[60rem]">
+              <h1 className="font-light mb-2">Your bag is empty</h1>
               <Link
                 to="/"
-                className="inline-block mb-52 text-white bg-black px-6 py-2 sm:text-center "
+                className="inline-block mb-52 text-white bg-black px-6 py-2"
               >
                 Go Shopping
               </Link>
-            </>
+            </div>
           ) : (
             <div className="sm:flex gap-6">
               {" "}
