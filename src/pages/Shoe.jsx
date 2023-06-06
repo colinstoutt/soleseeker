@@ -33,7 +33,7 @@ export default function Shoe() {
         <>
           <div className="flex lg:flex-row flex-col justify-center overflow-hidden">
             <SmallCarousel images={shoe.images} shoe={shoe} />
-            <div className="px-8 text-lg font-light lg:w-3/5">
+            <div className="relative px-8 text-lg font-light lg:w-3/5">
               <div>
                 <h2 className="text-gray-500 ">{shoe.brand}</h2>
                 <h1 className="text-2xl -mt-1 mb-1">{shoe.name}</h1>
@@ -88,13 +88,13 @@ export default function Shoe() {
                     setSizeWarning(false);
                   }
                 }}
-                className="border border-gray-300 hover:border-black px-6 py-2"
+                className="border border-gray-300 hover:border-black px-6 py-2 mb-[2.1rem]"
                 style={!sizeWarning ? { marginBottom: "2.1rem" } : null}
               >
                 Add to Bag
               </button>
               {sizeWarning ? (
-                <h1 className="mb-4 text-red-500 text-sm">
+                <h1 className="absolute top-[12.8rem] text-red-500 text-sm">
                   Please pick a size.
                 </h1>
               ) : null}
