@@ -4,13 +4,11 @@ import { shoesArray, getShoeData } from "../data/shoes";
 import { SmallCarousel } from "../components/SmallCarousel";
 import { CartModal } from "../components/Modal";
 import { CartContext } from "../cartContext";
-import { Link } from "react-router-dom";
 
 export default function Shoe() {
   const { id } = useParams();
   const shoe = getShoeData(id);
   const cart = useContext(CartContext);
-
   const [size, setSize] = useState("");
   console.log(size);
   const handleSizeChange = (e) => {
@@ -88,7 +86,11 @@ export default function Shoe() {
                     setSizeWarning(false);
                   }
                 }}
-                className="border border-gray-300 hover:border-black px-6 py-2 mb-[2.1rem]"
+                className={
+                  shoe.isSoldOut
+                    ? "border border-gray-300 text-gray-500 px-6 py-2 mb-[2.1rem]"
+                    : "border border-gray-300 hover:border-black px-6 py-2 mb-[2.1rem]"
+                }
                 style={!sizeWarning ? { marginBottom: "2.1rem" } : null}
               >
                 Add to Bag
@@ -120,7 +122,7 @@ export default function Shoe() {
                 <img
                   className="mt-4 h-auto w-40"
                   src={product.images[0]}
-                  alt=""
+                  alt={product.name}
                 />
                 <div>
                   <h1 className="lg:text-md md:text-sm mt-4">{product.name}</h1>
