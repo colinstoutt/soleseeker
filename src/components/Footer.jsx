@@ -25,6 +25,7 @@ export const Footer = () => {
           >
             <input
               type="email"
+              required
               placeholder="ENTER EMAIL"
               size={30}
               className="text-center outline-none text-black bg-white py-2 border-r border-gray-300 rounded-md"
