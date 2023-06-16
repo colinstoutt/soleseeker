@@ -108,7 +108,7 @@ export default function Shoe() {
       <div className="h-[0.5px] w-full bg-gray-300"></div>
       <div className="sm:px-24 p-8 mb-6">
         <h1 className="text-md font-light mb-4">More {shoe.brand} shoes:</h1>
-        <div className="sm:flex gap-6 overflow-x-scroll">
+        <div className="sm:flex gap-6 ">
           {shoesArray
             .filter(
               (product) =>
@@ -117,7 +117,7 @@ export default function Shoe() {
             .map((product) => (
               <a
                 href={`/${product.id}`}
-                className="flex gap-4 items-center font-light overflow-y-scroll"
+                className="flex gap-4 items-center font-light w-96"
               >
                 <img
                   className="mt-4 h-auto w-40"
