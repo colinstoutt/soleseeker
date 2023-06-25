@@ -157,7 +157,6 @@ const shoesArray = [
 
 function getShoeData(id) {
   let shoeData = shoesArray.find((shoe) => shoe.id === id);
-
   if (shoeData === undefined) {
     console.log("Shoe data does not exist for id: " + id);
     return undefined;

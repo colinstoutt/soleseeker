@@ -32,9 +32,9 @@ export default function Nike({ searchQuery }) {
                     : shoeName.includes(search) || shoeBrand.includes(search);
                 })
                 .sort((a, b) => a.name.localeCompare(b.name))
-                .map((shoe, index) => {
+                .map((shoe) => {
                   return (
-                    <Link to={`/${shoe.id}`} key={index} id={shoe.id}>
+                    <Link to={`/${shoe.id}`} key={shoe.id} id={shoe.id}>
                       <div className="flex flex-col items-left p-4 justify-between h-72 border border-black">
                         <div className="flex gap-10 justify-between">
                           <h1 className="text-[0.9rem] font-light">
@@ -66,9 +66,9 @@ export default function Nike({ searchQuery }) {
 
                   return shoeBrand === "jordan";
                 })
-                .map((shoe, index) => {
+                .map((shoe) => {
                   return (
-                    <Link to={`/${shoe.id}`} key={index} id={shoe.id}>
+                    <Link to={`/${shoe.id}`} key={shoe.id} id={shoe.id}>
                       <div className="relative flex flex-col items-left p-4 justify-between h-72 border border-black">
                         <div className="flex gap-10 justify-between">
                           <h1 className="text-[0.9rem] font-light">

@@ -17,6 +17,7 @@ export const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState(localStorageCart);
 
   useEffect(() => {
+    // setting the cart in local storage
     localStorage.setItem("cart", JSON.stringify(cartProducts));
   }, [cartProducts]);
 
@@ -40,7 +41,7 @@ export const CartProvider = ({ children }) => {
           },
         ])
       : setCartProducts(
-          // else, map through the cart
+          // else, if product is already in cart, map through the cart
           cartProducts.map(
             (product) =>
               product.id === id // if a product matches the id argument that was given, add 1 to quantity

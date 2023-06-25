@@ -10,12 +10,12 @@ export default function Shoe() {
   const shoe = getShoeData(id);
   const cart = useContext(CartContext);
   const [size, setSize] = useState("");
-  console.log(size);
+
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
+
   const [sizeWarning, setSizeWarning] = useState(false);
-  console.log(sizeWarning);
   const [toggleModal, setToggleModal] = useState(false);
 
   return (
@@ -24,9 +24,10 @@ export default function Shoe() {
         <CartModal toggleModal={toggleModal} setToggleModal={setToggleModal} />
       ) : null}
       {toggleModal ? (
-        <div className="z-30 bg-black opacity-20 fixed top-0 right-0 w-full h-full"></div>
+        <div className="z-30 bg-black opacity-20 fixed top-20 right-0 w-full h-full text-red-500">
+          test
+        </div>
       ) : null}
-
       {shoe ? (
         <>
           <div className="flex lg:flex-row flex-col justify-center overflow-hidden">
