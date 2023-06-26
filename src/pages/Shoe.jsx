@@ -24,9 +24,7 @@ export default function Shoe() {
         <CartModal toggleModal={toggleModal} setToggleModal={setToggleModal} />
       ) : null}
       {toggleModal ? (
-        <div className="z-30 bg-black opacity-20 fixed top-20 right-0 w-full h-full text-red-500">
-          test
-        </div>
+        <div className="z-30 bg-black opacity-20 fixed top-0 right-0 w-full h-full text-red-500"></div>
       ) : null}
       {shoe ? (
         <>
